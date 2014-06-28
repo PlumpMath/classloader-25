@@ -61,11 +61,11 @@ public class MainTester {
 
 		URL url1 = new URL("file://" + currentPath
 				+ "/libs/tested-bean-1.0.jar");
-		URLClassLoader cl1 = new URLClassLoader(new URL[] { url1 });
+		URLClassLoader cl1 = new InvertedClassLoader(new URL[] { url1 }, ClassLoader.getSystemClassLoader());
 
 		URL url2 = new URL("file://" + currentPath
 				+ "/libs/tested-bean-2.0.jar");
-		URLClassLoader cl2 = new URLClassLoader(new URL[] { url2 });
+		URLClassLoader cl2 = new InvertedClassLoader(new URL[] { url2 }, ClassLoader.getSystemClassLoader());
 
 		new MainTester(cl1, cl2).runTest();
 
