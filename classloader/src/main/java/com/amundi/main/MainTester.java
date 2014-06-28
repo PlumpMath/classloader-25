@@ -25,6 +25,10 @@ public class MainTester {
 		System.out.println(v1.getVersion());
 		System.out.println(v2.getVersion());
 		
+
+		System.out.println(v1.getVersionFromProperty());
+		System.out.println(v2.getVersionFromProperty());
+
 	}
 	
 	private static IBaseInterface buildBaseInterface(ClassLoader cl) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
