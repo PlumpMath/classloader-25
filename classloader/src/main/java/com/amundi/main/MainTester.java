@@ -1,5 +1,6 @@
 package com.amundi.main;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -34,10 +35,12 @@ public class MainTester {
 	
 
 	public static void main(String[] args) throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException, URISyntaxException {
-		URL url1 = new URL("file:///home/zerog/workspace/parent/classloader/libs/tested-bean-1.0.jar");
+		String currentPath = new File("").getAbsolutePath();
+		
+		URL url1 = new URL("file://" + currentPath + "/libs/tested-bean-1.0.jar");
 		URLClassLoader cl1 = new URLClassLoader(new URL[] {url1});
 		
-		URL url2 = new URL("file:///home/zerog/workspace/parent/classloader/libs/tested-bean-2.0.jar");
+		URL url2 = new URL("file://" + currentPath + "/libs/tested-bean-2.0.jar");
 		URLClassLoader cl2 = new URLClassLoader(new URL[] {url2});
 
 		new MainTester(cl1, cl2).runTest();
