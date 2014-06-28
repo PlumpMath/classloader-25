@@ -8,5 +8,7 @@
   	<module>api</module>
   	<module>tested-bean</module>
   	<module>classloader</module>
+  	<module>server</module>
+  	<module>client</module>
   </modules>
 </project>
